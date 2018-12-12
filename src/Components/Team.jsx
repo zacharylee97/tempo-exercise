@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import User from './User.jsx';
+import UserList from './UserList.jsx';
 
 export default class Team extends React.Component {
   state = {
@@ -23,7 +25,9 @@ export default class Team extends React.Component {
     return (
       <div>
         <p>Team {id}: {name}</p>
-        <p>Lead: {lead}</p>
+        <div>Lead:
+          <UserList id={lead} />
+        </div>
         <div>Members:
           {this.state.members.map(member =>
             <p key={member}>{member}</p>

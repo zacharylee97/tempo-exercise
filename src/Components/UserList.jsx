@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import User from './User'
 
 export default class UserList extends React.Component {
   state = {
@@ -15,11 +14,19 @@ export default class UserList extends React.Component {
       })
   }
 
+  findUser() {
+    const user = this.state.users.find(user => user.id === this.props.id);
+    if (user) {
+      console.log(user)
+      return (<p>{user.name} ({user.username})</p>)
+    }
+  }
+
   render() {
     return (
-      <ul>
-        {this.state.users.map(user => <li>{user.name}</li>)}
-      </ul>
+      <div>
+        {this.findUser()}
+      </div>
     )
   }
 }
