@@ -23,11 +23,13 @@ export default class Team extends React.Component {
     const {id, name, lead} = this.state.team;
     return (
       <div>
-        <p>Team {id}: {name}</p>
-        <div>User:
+        <h3>Team {id}: {name}</h3>
+        <div className="lead">
+          <h3>Lead:</h3>
           <User id={lead} />
         </div>
-        <div>Members:
+        <div className="members">
+          <h3>Members:</h3>
           {this.state.members.map(member =>
             <User key={member} id={member} />
           )}
