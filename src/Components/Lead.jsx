@@ -14,18 +14,17 @@ export default class Lead extends React.Component {
       })
   }
 
-  findUser() {
-    const user = this.state.users.find(user => user.id === this.props.id);
-    if (user) {
-      console.log(user)
-      return (<p>{user.name} ({user.username})</p>)
+  findLead() {
+    const lead = this.state.users.find(user => user.id === this.props.id);
+    if (lead) {
+      return (<p>{lead.name} ({lead.username})</p>)
     }
   }
 
   render() {
     return (
       <div>
-        {this.findUser()}
+        {this.findLead()}
       </div>
     )
   }
